@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import mammoth from "mammoth";
 
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = "here";
 
 const App = () => {
   const [wordContent, setWordContent] = useState("");
@@ -19,7 +19,7 @@ const App = () => {
     try {
       const arrayBuffer = await file.arrayBuffer();
 
-      // Word dosyasını metne dönüştürmek için Mammoth kullanıyoruz
+      // Word dosyasını metne dönüştürme
       const { value } = await mammoth.extractRawText({ arrayBuffer });
 
       const cleanedContent = value.replace(/[^\x20-\x7E]/g, ""); // Temiz metin oluştur
@@ -34,7 +34,7 @@ const App = () => {
     }
   };
 
-  // OpenAI API'sine içerik göndererek quiz soruları oluşturma (fetch kullanımı)
+  
  const generateQuizQuestions = async (content) => {
   try {
     console.log("Gönderilen Metin:", content);
